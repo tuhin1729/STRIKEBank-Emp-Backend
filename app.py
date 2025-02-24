@@ -31,7 +31,7 @@ def home():
 def auth():
 	username = request.form['username']
 	password = request.form['password']
-	if username == "user" and password == "7h!$_!z_4_$up3r_$3cur3_p4$$w0rd":
+	if username == "user" and password == "":
 		encoded = jwt.encode({"username": f"{username}"}, private_key, algorithm="RS256", headers={"kid": "1729", "jku": f"http://{ip}:8080/.well-known/jwk.json"})
 		print(encoded)
 	else:
